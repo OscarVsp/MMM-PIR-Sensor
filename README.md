@@ -3,10 +3,13 @@
 
 | Option           | Type  | Description
 |----------------- |----------- |-----------
-| `username` | *Required* | The email address of the OneTracker account.
-| `password` | *Required* | The password of the OneTracker account
-| `useHeader` | *Optional* | Use header on top of the module. **Default:** `true`).
-| `header` | *Optional* | The header to use (`useHeader` has to be set to `true`).
-| `retryDelay` | *Optional* | The delay before re-sending a request. **Default:** `2500` (2.5 seconds).
-| `updateInterval` | *Optional* | The interval bewteen two update. **Default:** `10*60*1000` (10 minutes).
-| `maxParcels` | *Optional* | The maximum number of parcel to display. **Default:** `5`.
+| `url` | *Required* | The url or IP address for the OctoPrint server
+| `api_key` | *Required* | Your API Key from the OctoPrint server
+| `printerName` | *Optional* | Add a name to show on top of the module
+| `showStream` | *Optional* | Whether or not to show the camera stream. **Default:** `true`
+| `maxStreamWidth` | *Optional* | Maximum width for stream display in pixels (`0` for stream width). **Default:** `0`
+| `maxStreamHeight` | *Optional* | Maximum height for stream display in pixels (`0` for stream height). **Default:** `0`
+| `streamUrl` | *Optional* | Set a custom url for accessing the MJPEG camera stream. **Default**: `url:8080/?action=stream`
+| `showTemps` | *Optional* | Whether or not so show temperature info. **Default:** `true`
+| `showDetailsWhenOffline` | *Optional* | Whether or not to hide the printer details when the printer is offline. **Default:** `false`
+| `interactive` | *Optional* | Allow interactive control of the printer. **Default:** `true`.
