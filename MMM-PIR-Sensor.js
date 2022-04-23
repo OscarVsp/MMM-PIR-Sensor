@@ -2,6 +2,7 @@
 
 /* Magic Mirror
 * Module: MMM-PIR-Sensor
+* Fixed by: Oscar Vsp
 *
 * By Paul-Vincent Roll http://paulvincentroll.com
 * MIT Licensed.
