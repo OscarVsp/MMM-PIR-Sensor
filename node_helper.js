@@ -2,6 +2,7 @@
 
 /* Magic Mirror
 * Module: MMM-PIR-Sensor
+* Fixed version by: Oscar Van Slijpe
 *
 * By Paul-Vincent Roll http://paulvincentroll.com
 * MIT Licensed.
@@ -17,7 +18,6 @@ module.exports = NodeHelper.create({
     },
 
     activateMonitor: function () {
-        console.log("screen activation")
         // If always-off is enabled, keep monitor deactivated
         let alwaysOffTrigger = this.alwaysOff && (this.alwaysOff.readSync() === this.config.alwaysOffState)
         if (alwaysOffTrigger) {
@@ -46,7 +46,6 @@ module.exports = NodeHelper.create({
     },
 
     deactivateMonitor: function () {
-        console.log("screen desactivation")
         // If always-on is enabled, keep monitor activated
         let alwaysOnTrigger = this.alwaysOn && (this.alwaysOn.readSync() === this.config.alwaysOnState)
         let alwaysOffTrigger = this.alwaysOff && (this.alwaysOff.readSync() === this.config.alwaysOffState)
@@ -92,7 +91,7 @@ module.exports = NodeHelper.create({
             exec("/usr/bin/vcgencmd display_power 1", null);
 
 	    if (self.config.powerSaving) {
-            clearTimeout(self.deactivateMonitorTimeout);        //CHANGE !
+            clearTimeout(self.deactivateMonitorTimeout);        
             self.deactivateMonitorTimeout = setTimeout(function() { // Set the timeout before movement is identified
                 self.deactivateMonitor();
             }, self.config.powerSavingDelay * 1000);
